@@ -1,0 +1,42 @@
+@font-face {
+  font-family: Interstate;
+  src: url(/app/addons/Interstate-RegularCondensed.ttf) format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: Interstate;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    color: #0275d8;
+  }
+}
+
+li {
+  list-style: none;
+}
+
+.row {
+  display: flex;
+}
+
+.col-2 {
+  flex: 50%;
+}
+
+.underline {
+  text-decoration: underline;
+}

@@ -1,0 +1,36 @@
+.news__sect {
+  height: 87vh;
+  .row {
+    height: 100%;
+    .col-2 {
+      padding: 3rem 0rem;
+      svg {
+        position: absolute;
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
+        &:hover {
+          scale: 1.2;
+          circle {
+            stroke: #0275d8;
+          }
+        }
+      }
+      h2 {
+        color: white;
+        font-size: 3rem;
+      }
+    }
+  }
+  .btm {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  .top {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+}

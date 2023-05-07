@@ -1,0 +1,25 @@
+.top__navbar {
+  padding: 0.5rem 0rem;
+  min-height: 2vh;
+  &.chi-siamo {
+    background: #031226;
+    a {
+      color: white;
+    }
+  }
+  ul {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    li {
+      padding: 0 1rem;
+      font-size: 1.6rem;
+      a {
+        transition: all 0.2s ease-in-out;
+        &:hover {
+          color: #0275d8;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,94 @@
+.kpop-group {
+  min-height: 50vh;
+  background: #031226;
+  img {
+    height: 650px;
+    width: 100vw;
+  }
+}
+
+.chi-siamo__sect {
+  min-height: 50vh;
+  background: #031226;
+  color: white;
+  text-transform: uppercase;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0rem 10rem;
+  .chi-siamo_title {
+    font-size: 5rem;
+    padding-bottom: 5rem 0rem;
+  }
+  .chi-siamo_paragraph {
+    padding: 5rem 0rem;
+    font-size: 2.5rem;
+  }
+  .chi-siamo_fdff {
+    font-size: 3.6rem;
+  }
+}
+
+.fd2019 {
+  width: 100%;
+  height: 500px;
+  background: rgb(3, 18, 38);
+}
+
+.scopri-di-piu__sect {
+  background: rgb(3, 18, 38);
+  background: linear-gradient(180deg, #031226 0% #022649 100%);
+  color: white;
+  min-height: 100vh;
+  .scopridipiu_title {
+    text-align: center;
+    padding: 5rem 0rem;
+    font-size: 5rem;
+  }
+  hr {
+    color: white;
+    margin: 2rem 10rem;
+  }
+  .row {
+    .dipiu {
+      text-align: center;
+      font-size: 3.6rem;
+      a {
+        transition: all 0.2s ease-in-out;
+        &:hover {
+          color: #0275d8;
+        }
+      }
+    }
+  }
+  .row.infos {
+    padding: 5rem 0rem;
+    justify-content: center;
+    align-items: center;
+    h2 {
+      font-size: 3.6rem;
+    }
+    p,
+    a {
+      font-size: 2.4rem;
+    }
+    a {
+      transition: all 0.2s ease-in-out;
+      &:hover {
+        color: #0275d8;
+      }
+    }
+    .google-map {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      .row {
+        padding-left: 17.5rem;
+        width: 100%;
+      }
+      height: 100%;
+    }
+  }
+}
