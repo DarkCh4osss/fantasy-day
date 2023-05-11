@@ -16,6 +16,11 @@ html {
   font-family: Interstate;
 }
 
+body {
+  background: rgb(3, 18, 38);
+  background: linear-gradient(180deg, #031226 0% #022649 100%);
+}
+
 a {
   text-decoration: none;
   color: white;
@@ -37,6 +42,19 @@ li {
   flex: 50%;
 }
 
+.col-3 {
+  flex: 33.3%;
+}
+
+.col-4 {
+  flex: 33.3%;
+}
+
 .underline {
   text-decoration: underline;
+}
+
+.glow {
+  color: #fff;
+  text-shadow: 0 0 7px #fff, 0 0 10px #ffffff7f;
 }
