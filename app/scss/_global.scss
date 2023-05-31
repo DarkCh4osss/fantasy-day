@@ -4,6 +4,12 @@
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: Arcane;
+  src: url(/app/addons/Arcane_Nine.otf);
+  font-weight: normal;
+  font-style: normal;
+}
 
 * {
   margin: 0;
@@ -13,7 +19,7 @@
 
 html {
   font-size: 62.5%;
-  font-family: Interstate;
+  font-family: Arcane;
 }
 
 body {

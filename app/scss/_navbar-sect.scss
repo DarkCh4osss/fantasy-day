@@ -8,8 +8,9 @@
       height: 100%;
     }
   }
-  &.chi-siamo {
-    background: white;
+  &.chi-siamo,
+  &.eventi {
+    background: #ffffff;
     a {
       color: black;
     }
@@ -17,13 +18,13 @@
   ul {
     display: flex;
     justify-content: flex-end;
-    align-items: center;
+    align-items: flex-start;
     li {
-      padding: 0 4rem;
-      font-size: 1.6rem;
+      margin: 0 4rem;
       a {
+        white-space: nowrap;
         text-shadow: 0px 6px 6px rgba(0, 0, 0, 0.25);
-        font-size: 3rem;
+        font-size: 2.4rem;
         letter-spacing: 0.6rem;
         transition: all 0.2s ease-in-out;
         &:hover {
@@ -32,11 +33,8 @@
       }
     }
   }
-  #logo {
-    padding: 0 5rem;
-    color: #0275d8;
-    font-family: "Sansita Swashed", cursive;
-    font-size: 7rem;
-    cursor: pointer;
+  .logo {
+    width: 250px;
+    padding: 0 4rem;
   }
 }

@@ -1,0 +1,54 @@
+.eventi-main__sect {
+  min-height: 50vh;
+  background: #031226;
+  color: white;
+  text-transform: uppercase;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0rem 10rem;
+  .eventi-main_title {
+    font-size: 5rem;
+    padding-bottom: 5rem 0rem;
+    span {
+      font-size: 4rem;
+    }
+  }
+  .eventi-main_paragraph {
+    padding: 5rem 0rem;
+    font-size: 2.5rem;
+  }
+}
+.eventi__sect {
+  .row {
+    justify-content: center;
+    align-items: center;
+    .col-4 {
+      padding: 3rem 2rem;
+    }
+    .event-card {
+      width: 350px;
+      height: 350px;
+      text-align: center;
+      box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.25);
+      .event-img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        object-position: top center;
+      }
+      .event-name {
+        width: 100%;
+        height: 75px;
+        font-size: 2.4rem;
+        background: #031c36;
+      }
+      .event-date {
+        background: #d5dae2;
+        color: #000544;
+        font-size: 1.6rem;
+      }
+    }
+  }
+}
