@@ -19,9 +19,10 @@
     }
   }
   ul {
+    height: 100%;
     display: flex;
-    justify-content: flex-end;
-    align-items: flex-start;
+    justify-content: space-around;
+    align-items: flex-end;
     li {
       margin: 0 4rem;
       a {

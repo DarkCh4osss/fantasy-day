@@ -1,10 +1,11 @@
+<?php include('./app/php/connection.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Eventi | Fantasy Day</title>
+    <title>Dicono di noi | Fantasy Day</title>
     <link rel="stylesheet" href="./dist/styles.css" />
     <link rel="shortcut icon" href="./app/img/logo.png" type="image/png" />
     <link
@@ -27,7 +28,7 @@
     <link rel="preload" href="./app/img/Rebis_color_resized.png" />
   </head>
   <body>
-    <section class="top__navbar eventi">
+    <section class="top__navbar chi-siamo">
       <div class="row">
         <div class="col-2"></div>
         <div class="col-2">
@@ -58,13 +59,17 @@
                 ><i class="fa fa-facebook"></i
               ></a>
             </li>
-            <li><a href="">AREA RISERVATA</a></li>
+            <?php if(isset($_SESSION['admin'])) { 
+              echo "<li><a href='./app/php/logout.php'>LOGOUT</a></li>";
+            } else {
+              echo "<li><a href='./app/php/login.php'>AREA RISERVATA</a></li>";
+            } ?>
           </ul>
         </div>
       </div>
     </section>
 
-    <section class="navbar__sect eventi">
+    <section class="navbar__sect chi-siamo">
       <div class="row">
         <div class="col-2">
           <img
@@ -81,9 +86,9 @@
               <a href="chi-siamo.html">CHI SIAMO</a>
             </li>
             <li><a href="">AREE</a></li>
-            <li><a href="#">EVENTI</a></li>
+            <li><a href="eventi.html">EVENTI</a></li>
             <li><a href="">FILM FESTIVAL</a></li>
-            <li><a href="partecipanti.html">PARTECIPANTI</a></li>
+            <li><a href="partecipanti.php">PARTECIPANTI</a></li>
             <li><a href="">ARCHIVIO</a></li>
             <li>
               <a href=""><i class="fa fa-search"></i></a>
@@ -92,95 +97,40 @@
         </div>
       </div>
     </section>
-    </section>
 
     <div class="kpop-group">
-      <img src="./app/img/eventi.jpg" alt="" />
+      <img src="./app/img/kpop_group.jpg" alt="" />
     </div>
-    <section class="eventi-main__sect">
-      <h1 class="eventi-main_title glow">Eventi</h1>
-      <p class="eventi-main_paragraph">
-        Le attività e gli eventi di tutte le edizioni del Fantasy Day
+    <section class="chi-siamo__sect">
+      <h1 class="chi-siamo_title glow">
+        CHI SIAMO - <span>DICONO DI NOI</span>
+      </h1>
+      <p class="chi-siamo_paragraph">
+        Le testate giornalistiche campane parlano del Fantasy Day, delle
+        attività ed esperienze culturali rese possibili grazie ai nostri
+        fantastici ospiti.
       </p>
     </section>
 
-    <section class="eventi__sect">
-      <div class="row">
-        <div class="col-4">
-          <div class="event-card">
-            <img src="./app/img/mh.jpg" alt="" class="event-img" />
-            <div class="event-name glow">
-              <a href="">TRASMUTAZIONE</a>
-            </div>
-            <p class="event-date">edizione - 2023</p>
-          </div>
-        </div>
-        <div class="col-4">
-          <div class="event-card">
-            <img src="./app/img/mh.jpg" alt="" class="event-img" />
-            <div class="event-name glow">
-              <a href="">TRASMUTAZIONE</a>
-            </div>
-            <p class="event-date">edizione - 2023</p>
-          </div>
-        </div>
-        <div class="col-4">
-          <div class="event-card">
-            <img src="./app/img/mh.jpg" alt="" class="event-img" />
-            <div class="event-name glow">
-              <a href="">TRASMUTAZIONE</a>
-            </div>
-            <p class="event-date">edizione - 2023</p>
-          </div>
-        </div>
-        <div class="col-4">
-          <div class="event-card">
-            <img src="./app/img/mh.jpg" alt="" class="event-img" />
-            <div class="event-name glow">
-              <a href="">TRASMUTAZIONE</a>
-            </div>
-            <p class="event-date">edizione - 2023</p>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-4">
-          <div class="event-card">
-            <img src="./app/img/mh.jpg" alt="" class="event-img" />
-            <div class="event-name glow">
-              <a href="">TRASMUTAZIONE</a>
-            </div>
-            <p class="event-date">edizione - 2023</p>
-          </div>
-        </div>
-        <div class="col-4">
-          <div class="event-card">
-            <img src="./app/img/mh.jpg" alt="" class="event-img" />
-            <div class="event-name glow">
-              <a href="">TRASMUTAZIONE</a>
-            </div>
-            <p class="event-date">edizione - 2023</p>
-          </div>
-        </div>
-        <div class="col-4">
-          <div class="event-card">
-            <img src="./app/img/mh.jpg" alt="" class="event-img" />
-            <div class="event-name glow">
-              <a href="">TRASMUTAZIONE</a>
-            </div>
-            <p class="event-date">edizione - 2023</p>
-          </div>
-        </div>
-        <div class="col-4">
-          <div class="event-card">
-            <img src="./app/img/mh.jpg" alt="" class="event-img" />
-            <div class="event-name glow">
-              <a href="">TRASMUTAZIONE</a>
-            </div>
-            <p class="event-date">edizione - 2023</p>
-          </div>
-        </div>
-      </div>
+    <img src="./app/img/mh.jpg" alt="" class="fd2019" />
+
+    <section class="dicono-di-noi__sect">
+      <h1 class="diconodinoi_title glow">ARTICOLI SU DI NOI:</h1>
+      <ul class="articoli-list">
+        <?php 
+        $sql = $conn->query("select * from diconodinoi order by id desc limit 8;");
+        while($row = $sql->fetch_assoc()) {
+          echo "<li class='articoli-item'>";
+          echo "<a href='".$row['link']."' target='_blank'>".$row['titolo']."</a>";
+        }
+        ?>
+      </ul>
+      
+      <?php 
+        if(isset($_SESSION['admin'])) {
+          echo "<a class='add_btn' href='./app/php/add_diconodinoi.php'>Aggiungi articolo</a>"; 
+        }
+      ?>
     </section>
 
     <img src="./app/img/skeleton.jpg" alt="" class="skeleton" />
@@ -198,15 +148,19 @@
         <div class="col-3">
           <ul>
             <li><a href="/">HOME</a></li>
-            <li><a href="chi-siamo.html">CHI SIAMO</a></li>
-            <li><a href="#">EVENTI</a></li>
+            <li><a href="#">CHI SIAMO</a></li>
+            <li><a href="eventi.html">EVENTI</a></li>
             <li><a href="">ARCHIVIO</a></li>
             <li><a href="">AREE</a></li>
           </ul>
         </div>
         <div class="col-3">
           <ul>
-            <li><a href="">AREA RISERVATA</a></li>
+            <?php if(isset($_SESSION['admin'])) { 
+              echo "<li><a href='./app/php/logout.php'>LOGOUT</a></li>";
+            } else {
+              echo "<li><a href='./app/php/login.php'>AREA RISERVATA</a></li>";
+            } ?>
             <div class="socials">
               <ul>
                 <li>

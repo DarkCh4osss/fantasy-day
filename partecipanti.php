@@ -1,3 +1,4 @@
+<?php include('./app/php/connection.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -58,7 +59,11 @@
                 ><i class="fa fa-facebook"></i
               ></a>
             </li>
-            <li><a href="">AREA RISERVATA</a></li>
+            <?php if(isset($_SESSION['admin'])) { 
+              echo "<li><a href='./app/php/logout.php'>LOGOUT</a></li>";
+            } else {
+              echo "<li><a href='./app/php/login.php'>AREA RISERVATA</a></li>";
+            } ?>
           </ul>
         </div>
       </div>
@@ -126,81 +131,37 @@
     </section>
 
     <section class="partecipanti__sect">
-      <div class="row">
-        <div class="col-4">
-          <div class="author-card">
-            <img src="./app/img/mh.jpg" alt="" class="author-img" />
-            <div class="author-name glow">
-              <a href="">MARCO CANNELLA</a>
-            </div>
-            <p class="author-role">DOPPIAGGIO - 2022</p>
-          </div>
-        </div>
-        <div class="col-4">
-          <div class="author-card">
-            <img src="./app/img/mh.jpg" alt="" class="author-img" />
-            <div class="author-name glow">
-              <a href="">MARCO CANNELLA</a>
-            </div>
-            <p class="author-role">DOPPIAGGIO - 2022</p>
-          </div>
-        </div>
-        <div class="col-4">
-          <div class="author-card">
-            <img src="./app/img/mh.jpg" alt="" class="author-img" />
-            <div class="author-name glow">
-              <a href="">MARCO CANNELLA</a>
-            </div>
-            <p class="author-role">DOPPIAGGIO - 2022</p>
-          </div>
-        </div>
-        <div class="col-4">
-          <div class="author-card">
-            <img src="./app/img/mh.jpg" alt="" class="author-img" />
-            <div class="author-name glow">
-              <a href="">MARCO CANNELLA</a>
-            </div>
-            <p class="author-role">DOPPIAGGIO - 2022</p>
-          </div>
-        </div>
+      <div class="row"> -->
+        <?php 
+        $sql = $conn->query("select * from partecipanti order by anno desc limit 4;");
+        while($row = $sql->fetch_assoc()) {
+          echo "<div class='col-4'>";
+          echo "<div class='author-card'>";
+          echo "<img src='../app/img/mh.jpg' alt='' class='author-img' />";
+          echo "<div class='author-name glow'>";
+          echo "<a href=''>".$row['titolo']."</a>";
+          echo "</div>";
+          echo "<p class='author-role'>".$row['anno']."</p>";
+          echo "</div>";
+          echo "</div>";
+        }
+        ?>
       </div>
       <div class="row">
-        <div class="col-4">
-          <div class="author-card">
-            <img src="./app/img/mh.jpg" alt="" class="author-img" />
-            <div class="author-name glow">
-              <a href="">MARCO CANNELLA</a>
-            </div>
-            <p class="author-role">DOPPIAGGIO - 2022</p>
-          </div>
-        </div>
-        <div class="col-4">
-          <div class="author-card">
-            <img src="./app/img/mh.jpg" alt="" class="author-img" />
-            <div class="author-name glow">
-              <a href="">MARCO CANNELLA</a>
-            </div>
-            <p class="author-role">DOPPIAGGIO - 2022</p>
-          </div>
-        </div>
-        <div class="col-4">
-          <div class="author-card">
-            <img src="./app/img/mh.jpg" alt="" class="author-img" />
-            <div class="author-name glow">
-              <a href="">MARCO CANNELLA</a>
-            </div>
-            <p class="author-role">DOPPIAGGIO - 2022</p>
-          </div>
-        </div>
-        <div class="col-4">
-          <div class="author-card">
-            <img src="./app/img/mh.jpg" alt="" class="author-img" />
-            <div class="author-name glow">
-              <a href="">MARCO CANNELLA</a>
-            </div>
-            <p class="author-role">DOPPIAGGIO - 2022</p>
-          </div>
-        </div>
+        <?php 
+        $sql = $conn->query("select * from partecipanti where id > 336 order by anno desc limit 4;");
+        while($row = $sql->fetch_assoc()) {
+          echo "<div class='col-4'>";
+          echo "<div class='author-card'>";
+          echo "<img src='../app/img/mh.jpg' alt='' class='author-img' />";
+          echo "<div class='author-name glow'>";
+          echo "<a href=''>".$row['titolo']."</a>";
+          echo "</div>";
+          echo "<p class='author-role'>".$row['anno']."</p>";
+          echo "</div>";
+          echo "</div>";
+        }
+        ?>
       </div>
     </section>
 
@@ -227,7 +188,11 @@
         </div>
         <div class="col-3">
           <ul>
-            <li><a href="">AREA RISERVATA</a></li>
+            <?php if(isset($_SESSION['admin'])) { 
+              echo "<li><a href='./app/php/logout.php'>LOGOUT</a></li>";
+            } else {
+              echo "<li><a href='./app/php/login.php'>AREA RISERVATA</a></li>";
+            } ?>
             <div class="socials">
               <ul>
                 <li>

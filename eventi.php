@@ -1,10 +1,11 @@
+<?php include('./app/php/connection.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Marco Rossi | Fantasy Day</title>
+    <title>Eventi | Fantasy Day</title>
     <link rel="stylesheet" href="./dist/styles.css" />
     <link rel="shortcut icon" href="./app/img/logo.png" type="image/png" />
     <link
@@ -27,7 +28,7 @@
     <link rel="preload" href="./app/img/Rebis_color_resized.png" />
   </head>
   <body>
-    <section class="top__navbar chi-siamo">
+    <section class="top__navbar eventi">
       <div class="row">
         <div class="col-2"></div>
         <div class="col-2">
@@ -43,7 +44,7 @@
                 target="_blank"
                 ><i class="fa fa-tiktok"></i
               ></a>
-            </li>
+              <?php include('./app/php/connection.php'); ?>          </li>
             <li>
               <a
                 href="https://www.instagram.com/fantasyday_official/"
@@ -58,13 +59,17 @@
                 ><i class="fa fa-facebook"></i
               ></a>
             </li>
-            <li><a href="">AREA RISERVATA</a></li>
+            <?php if(isset($_SESSION['admin'])) { 
+              echo "<li><a href='./app/php/logout.php'>LOGOUT</a></li>";
+            } else {
+              echo "<li><a href='./app/php/login.php'>AREA RISERVATA</a></li>";
+            } ?>
           </ul>
         </div>
       </div>
     </section>
 
-    <section class="navbar__sect chi-siamo">
+    <section class="navbar__sect eventi">
       <div class="row">
         <div class="col-2">
           <img
@@ -81,9 +86,9 @@
               <a href="chi-siamo.html">CHI SIAMO</a>
             </li>
             <li><a href="">AREE</a></li>
-            <li><a href="eventi.html">EVENTI</a></li>
+            <li><a href="#">EVENTI</a></li>
             <li><a href="">FILM FESTIVAL</a></li>
-            <li><a href="#">PARTECIPANTI</a></li>
+            <li><a href="partecipanti.php">PARTECIPANTI</a></li>
             <li><a href="">ARCHIVIO</a></li>
             <li>
               <a href=""><i class="fa fa-search"></i></a>
@@ -92,115 +97,122 @@
         </div>
       </div>
     </section>
+    </section>
 
     <div class="kpop-group">
-      <img src="./app/img/kpop_group.jpg" alt="" />
+      <img src="./app/img/eventi.jpg" alt="" />
     </div>
-    <section class="chi-siamo__sect">
-      <h1 class="chi-siamo_title glow">
-        CHI SIAMO - <span>PARTECIPANTI</span>
-      </h1>
-      <p class="chi-siamo_paragraph">
-        Con noi, nel corso degli anni, tanti ospiti eccezionali. <br />
-        Ne citiamo alcuni: <br />
-        I fumettisti
-        <a href="" class="patecipante_paragraph">Bruno Brindisi</a>,
-        <a href="" class="partecipante_paragraph">Marco Castaldo</a>,
-        <a href="" class="partecipante_paragraph">Barbara Ciardo</a>; <br />
-        I doppiatori
-        <a href="" class="partecipante_paragraph">Davide Pierino</a>,
-        <a href="" class="partecipante_paragraph">Daniele Giuliani</a>,
-        <a href="" class="partecipante_paragraph">Manuel Meli</a>,
-        <a href="" class="partecipante_paragraph">Alex Polidori</a>,
-        <a href="" class="partecipante_paragraph">Marco Cannella</a>; <br />
-        Gli scrittori ed esperti di fumetto e di cultura audiovisiva
-        <a href="" class="partecipante_paragraph">Gianluca di Fratta</a>,
-        <a href="" class="partecipante_paragraph">Riccardo Rosati</a>,
-        <a href="" class="partecipante_paragraph">Davide Tarò</a>,
-        <a href="" class="partecipante_paragraph">Marino Maiorino</a>; <br />
-        Le scrittrici
-        <a href="" class="partecipante_paragraph">Monica Zunica</a>,
-        <a href="" class="partecipante_paragraph">Daniela Ferraro Pozzer</a>,
-        <a href="" class="partecipante_paragraph">Anna Fabrello</a>.
+    <section class="eventi-main__sect">
+      <h1 class="eventi-main_title glow">Eventi</h1>
+      <p class="eventi-main_paragraph">
+        Le attività e gli eventi di tutte le edizioni del Fantasy Day
       </p>
     </section>
 
-    <section class="partecipanti__sect">
-      <div class="row">
+    <section class="eventi__sect">
+      <!-- <div class="row">
         <div class="col-4">
-          <div class="author-card">
-            <img src="./app/img/mh.jpg" alt="" class="author-img" />
-            <div class="author-name glow">
-              <a href="">MARCO CANNELLA</a>
+          <div class="event-card">
+            <img src="./app/img/mh.jpg" alt="" class="event-img" />
+            <div class="event-name glow">
+              <a href="">TRASMUTAZIONE</a>
             </div>
-            <p class="author-role">DOPPIAGGIO - 2022</p>
+            <p class="event-date">edizione - 2023</p>
           </div>
         </div>
         <div class="col-4">
-          <div class="author-card">
-            <img src="./app/img/mh.jpg" alt="" class="author-img" />
-            <div class="author-name glow">
-              <a href="">MARCO CANNELLA</a>
+          <div class="event-card">
+            <img src="./app/img/mh.jpg" alt="" class="event-img" />
+            <div class="event-name glow">
+              <a href="">TRASMUTAZIONE</a>
             </div>
-            <p class="author-role">DOPPIAGGIO - 2022</p>
+            <p class="event-date">edizione - 2023</p>
           </div>
         </div>
         <div class="col-4">
-          <div class="author-card">
-            <img src="./app/img/mh.jpg" alt="" class="author-img" />
-            <div class="author-name glow">
-              <a href="">MARCO CANNELLA</a>
+          <div class="event-card">
+            <img src="./app/img/mh.jpg" alt="" class="event-img" />
+            <div class="event-name glow">
+              <a href="">TRASMUTAZIONE</a>
             </div>
-            <p class="author-role">DOPPIAGGIO - 2022</p>
+            <p class="event-date">edizione - 2023</p>
           </div>
         </div>
         <div class="col-4">
-          <div class="author-card">
-            <img src="./app/img/mh.jpg" alt="" class="author-img" />
-            <div class="author-name glow">
-              <a href="">MARCO CANNELLA</a>
+          <div class="event-card">
+            <img src="./app/img/mh.jpg" alt="" class="event-img" />
+            <div class="event-name glow">
+              <a href="">TRASMUTAZIONE</a>
             </div>
-            <p class="author-role">DOPPIAGGIO - 2022</p>
+            <p class="event-date">edizione - 2023</p>
           </div>
-        </div>
+        </div> -->
+        <?php 
+        $sql = $conn->query("select * from eventi order by anno desc limit 4;");
+        while($row = $sql->fetch_assoc()) {
+          echo "<div class='col-4'>";
+          echo "<div class='event-card'>";
+          echo "<img src='../app/img/mh.jpg' alt='' class='event-img' />";
+          echo "<div class='event-name glow'>";
+          echo "<a href=''>".$row['titolo']."</a>";
+          echo "</div>";
+          echo "<p class='event-role'>".$row['anno']."</p>";
+          echo "</div>";
+          echo "</div>";
+        }
+        ?>
       </div>
-      <div class="row">
+      <!-- <div class="row">
         <div class="col-4">
-          <div class="author-card">
-            <img src="./app/img/mh.jpg" alt="" class="author-img" />
-            <div class="author-name glow">
-              <a href="">MARCO CANNELLA</a>
+          <div class="event-card">
+            <img src="./app/img/mh.jpg" alt="" class="event-img" />
+            <div class="event-name glow">
+              <a href="">TRASMUTAZIONE</a>
             </div>
-            <p class="author-role">DOPPIAGGIO - 2022</p>
+            <p class="event-date">edizione - 2023</p>
           </div>
         </div>
         <div class="col-4">
-          <div class="author-card">
-            <img src="./app/img/mh.jpg" alt="" class="author-img" />
-            <div class="author-name glow">
-              <a href="">MARCO CANNELLA</a>
+          <div class="event-card">
+            <img src="./app/img/mh.jpg" alt="" class="event-img" />
+            <div class="event-name glow">
+              <a href="">TRASMUTAZIONE</a>
             </div>
-            <p class="author-role">DOPPIAGGIO - 2022</p>
+            <p class="event-date">edizione - 2023</p>
           </div>
         </div>
         <div class="col-4">
-          <div class="author-card">
-            <img src="./app/img/mh.jpg" alt="" class="author-img" />
-            <div class="author-name glow">
-              <a href="">MARCO CANNELLA</a>
+          <div class="event-card">
+            <img src="./app/img/mh.jpg" alt="" class="event-img" />
+            <div class="event-name glow">
+              <a href="">TRASMUTAZIONE</a>
             </div>
-            <p class="author-role">DOPPIAGGIO - 2022</p>
+            <p class="event-date">edizione - 2023</p>
           </div>
         </div>
         <div class="col-4">
-          <div class="author-card">
-            <img src="./app/img/mh.jpg" alt="" class="author-img" />
-            <div class="author-name glow">
-              <a href="">MARCO CANNELLA</a>
+          <div class="event-card">
+            <img src="./app/img/mh.jpg" alt="" class="event-img" />
+            <div class="event-name glow">
+              <a href="">TRASMUTAZIONE</a>
             </div>
-            <p class="author-role">DOPPIAGGIO - 2022</p>
+            <p class="event-date">edizione - 2023</p>
           </div>
-        </div>
+        </div> -->
+        <?php 
+        $sql = $conn->query("select * from eventi where id > 12 order by anno desc limit 4;");
+        while($row = $sql->fetch_assoc()) {
+          echo "<div class='col-4'>";
+          echo "<div class='event-card'>";
+          echo "<img src='../app/img/mh.jpg' alt='' class='event-img' />";
+          echo "<div class='event-name glow'>";
+          echo "<a href=''>".$row['titolo']."</a>";
+          echo "</div>";
+          echo "<p class='event-role'>".$row['anno']."</p>";
+          echo "</div>";
+          echo "</div>";
+        }
+        ?>
       </div>
     </section>
 
@@ -219,15 +231,19 @@
         <div class="col-3">
           <ul>
             <li><a href="/">HOME</a></li>
-            <li><a href="#">CHI SIAMO</a></li>
-            <li><a href="eventi.html">EVENTI</a></li>
+            <li><a href="chi-siamo.html">CHI SIAMO</a></li>
+            <li><a href="#">EVENTI</a></li>
             <li><a href="">ARCHIVIO</a></li>
             <li><a href="">AREE</a></li>
           </ul>
         </div>
         <div class="col-3">
           <ul>
-            <li><a href="">AREA RISERVATA</a></li>
+            <?php if(isset($_SESSION['admin'])) { 
+              echo "<li><a href='./app/php/logout.php'>LOGOUT</a></li>";
+            } else {
+              echo "<li><a href='./app/php/login.php'>AREA RISERVATA</a></li>";
+            } ?>
             <div class="socials">
               <ul>
                 <li>

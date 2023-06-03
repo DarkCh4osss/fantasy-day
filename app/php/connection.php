@@ -1,8 +1,9 @@
 <?php 
+session_start();
 $servername = 'localhost';
-$username = 'fab';
+$username = 'root';
 $psw = '1';
-$dbname = 'fantasy-day';
+$dbname = 'fantasyday';
 
 $conn = new mysqli($servername, $username, $psw, $dbname);
 

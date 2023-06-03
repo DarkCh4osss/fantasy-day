@@ -1,3 +1,4 @@
+<?php include('./app/php/connection.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -67,7 +68,11 @@
                   ><i class="fa fa-facebook"></i
                 ></a>
               </li>
-              <li><a href="">AREA RISERVATA</a></li>
+              <?php if(isset($_SESSION['admin'])) { 
+                echo "<li><a href='./app/php/logout.php'>LOGOUT</a></li>";
+               } else {
+                echo "<li><a href='./app/php/login.php'>AREA RISERVATA</a></li>";
+               } ?>
             </ul>
           </div>
         </div>
@@ -84,7 +89,7 @@
             />
           </div>
           <div class="col-2">
-            <ul>
+            <ul class="links">
               <li><a href="#">HOME</a></li>
               <li>
                 <a href="chi-siamo.html">CHI SIAMO</a>
@@ -240,7 +245,11 @@
         </div>
         <div class="col-3">
           <ul>
-            <li><a href="">AREA RISERVATA</a></li>
+            <?php if(isset($_SESSION['admin'])) { 
+              echo "<li><a href='./app/php/logout.php'>LOGOUT</a></li>";
+            } else {
+              echo "<li><a href='./app/php/login.php'>AREA RISERVATA</a></li>";
+            } ?>
             <div class="socials">
               <ul>
                 <li>

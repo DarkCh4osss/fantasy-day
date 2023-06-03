@@ -1,10 +1,11 @@
+<?php include('./app/php/connection.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Chi Siamo | Fantasy Day</title>
+    <title>Marco Rossi | Fantasy Day</title>
     <link rel="stylesheet" href="./dist/styles.css" />
     <link rel="shortcut icon" href="./app/img/logo.png" type="image/png" />
     <link
@@ -58,7 +59,11 @@
                 ><i class="fa fa-facebook"></i
               ></a>
             </li>
-            <li><a href="">AREA RISERVATA</a></li>
+            <?php if(isset($_SESSION['admin'])) { 
+              echo "<li><a href='./app/php/logout.php'>LOGOUT</a></li>";
+            } else {
+              echo "<li><a href='./app/php/login.php'>AREA RISERVATA</a></li>";
+            } ?>
           </ul>
         </div>
       </div>
@@ -78,12 +83,12 @@
           <ul>
             <li><a href="./">HOME</a></li>
             <li>
-              <a href="#">CHI SIAMO</a>
+              <a href="chi-siamo.html">CHI SIAMO</a>
             </li>
             <li><a href="">AREE</a></li>
             <li><a href="eventi.html">EVENTI</a></li>
             <li><a href="">FILM FESTIVAL</a></li>
-            <li><a href="partecipanti.html">PARTECIPANTI</a></li>
+            <li><a href="#">PARTECIPANTI</a></li>
             <li><a href="">ARCHIVIO</a></li>
             <li>
               <a href=""><i class="fa fa-search"></i></a>
@@ -97,77 +102,109 @@
       <img src="./app/img/kpop_group.jpg" alt="" />
     </div>
     <section class="chi-siamo__sect">
-      <h1 class="chi-siamo_title glow">CHI SIAMO</h1>
-      <div class="row">
-        <div class="col-2">
-          <p class="chi-siamo_paragraph">
-            Il Fantasy Day nasce nel 2007 come spin off di "Le Connessioni
-            Inattese" e, da allora, opera congiuntamente per diffondere la
-            cultura e in particolare la cultura del fumetto attraverso attivita'
-            seminariali e ludiche: fumetti, gdr, giochi, incontri, concorsi
-          </p>
-        </div>
-        <div class="col-2">
-          <p class="chi-siamo_paragraph">
-            per le scuole, laboratori, cosplay, mostre, k-pop, stand nella
-            splendida cornice delle ville vesuviane del Miglio d'Oro di San
-            Giorgio a Cremano (NA).
-          </p>
-        </div>
-      </div>
-      <!-- <p class="chi-siamo_paragraph">
-        Il Fantasy Day nasce nel 2007 come spin off di "Le Connessioni Inattese"
-        e, da allora, opera congiuntamente per diffondere la cultura e in
-        particolare la cultura del fumeto attraverso attivita' seminariali e
-        ludiche: fumetti, gdr, giochi, incontri, concorsi per le scuole,
-        laboratori, cosplay, mostre, k-pop, stand nella splendida cornice delle
-        ville vesuviane del Miglio d'Oro di San Giorgio a Cremano (NA).
-      </p> -->
-      <h2 class="chi-siamo_fdff">
-        Nel 2023 nasce anche il Fantasy Day Film Festival dedicato ai
-        cortometraggi fantasy.
-      </h2>
+      <h1 class="chi-siamo_title glow">
+        CHI SIAMO - <span>PARTECIPANTI</span>
+      </h1>
+      <p class="chi-siamo_paragraph">
+        Con noi, nel corso degli anni, tanti ospiti eccezionali. <br />
+        Ne citiamo alcuni: <br />
+        I fumettisti
+        <a href="" class="patecipante_paragraph">Bruno Brindisi</a>,
+        <a href="" class="partecipante_paragraph">Marco Castaldo</a>,
+        <a href="" class="partecipante_paragraph">Barbara Ciardo</a>; <br />
+        I doppiatori
+        <a href="" class="partecipante_paragraph">Davide Pierino</a>,
+        <a href="" class="partecipante_paragraph">Daniele Giuliani</a>,
+        <a href="" class="partecipante_paragraph">Manuel Meli</a>,
+        <a href="" class="partecipante_paragraph">Alex Polidori</a>,
+        <a href="" class="partecipante_paragraph">Marco Cannella</a>; <br />
+        Gli scrittori ed esperti di fumetto e di cultura audiovisiva
+        <a href="" class="partecipante_paragraph">Gianluca di Fratta</a>,
+        <a href="" class="partecipante_paragraph">Riccardo Rosati</a>,
+        <a href="" class="partecipante_paragraph">Davide Tarò</a>,
+        <a href="" class="partecipante_paragraph">Marino Maiorino</a>; <br />
+        Le scrittrici
+        <a href="" class="partecipante_paragraph">Monica Zunica</a>,
+        <a href="" class="partecipante_paragraph">Daniela Ferraro Pozzer</a>,
+        <a href="" class="partecipante_paragraph">Anna Fabrello</a>.
+      </p>
     </section>
 
-    <img src="./app/img/fantasyday_2019.jpg" alt="" class="fd2019" />
-
-    <section class="scopri-di-piu__sect">
-      <h1 class="scopridipiu_title glow">SCOPRI DI PIU'</h1>
+    <section class="partecipanti__sect">
       <div class="row">
-        <div class="col-2 dipiu">
-          <a href="./dicono-di-noi.html">DICONO DI NOI</a>
-        </div>
-        <div class="col-2 dipiu">
-          <a href="partecipanti.html">PARTECIPANTI</a>
-        </div>
-      </div>
-      <hr />
-      <div class="row infos">
-        <div class="col-2">
-          <div class="google-map">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3018.9978327407757!2d14.33681757668266!3d40.82801127137653!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x133ba6516bd54277%3A0x51c337bd983079c2!2sParco%20di%20Villa%20Bruno!5e0!3m2!1sit!2sit!4v1683478958103!5m2!1sit!2sit"
-              width="600"
-              height="450"
-              style="border: 0"
-              allowfullscreen=""
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-            ></iframe>
-            <div class="row">
-              <div class="col-2">
-                <a class="underline" href="">COME RAGGIUNGERCI</a>
-              </div>
-              <div class="col-2"><a href="">VILLA FALANGA ></a></div>
+        <div class="col-4">
+          <div class="author-card">
+            <img src="./app/img/mh.jpg" alt="" class="author-img" />
+            <div class="author-name glow">
+              <a href="">MARCO CANNELLA</a>
             </div>
+            <p class="author-role">DOPPIAGGIO - 2022</p>
           </div>
         </div>
-        <div class="col-2">
-          <h2>ALTANUR</h2>
-          <p>ASSOCIAZIONE CULTURALE INTERDISCIPLINARE</p>
-          <p>(+39)333 44 94 037</p>
-          <a href="mailto:info@fantasyday.it">INFO@FANTASYDAY.IT</a> <br />
-          <a href="mailto:staff@fantasyday.it">STAFF@FANTASYDAY.IT</a>
+        <div class="col-4">
+          <div class="author-card">
+            <img src="./app/img/mh.jpg" alt="" class="author-img" />
+            <div class="author-name glow">
+              <a href="">MARCO CANNELLA</a>
+            </div>
+            <p class="author-role">DOPPIAGGIO - 2022</p>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="author-card">
+            <img src="./app/img/mh.jpg" alt="" class="author-img" />
+            <div class="author-name glow">
+              <a href="">MARCO CANNELLA</a>
+            </div>
+            <p class="author-role">DOPPIAGGIO - 2022</p>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="author-card">
+            <img src="./app/img/mh.jpg" alt="" class="author-img" />
+            <div class="author-name glow">
+              <a href="">MARCO CANNELLA</a>
+            </div>
+            <p class="author-role">DOPPIAGGIO - 2022</p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-4">
+          <div class="author-card">
+            <img src="./app/img/mh.jpg" alt="" class="author-img" />
+            <div class="author-name glow">
+              <a href="">MARCO CANNELLA</a>
+            </div>
+            <p class="author-role">DOPPIAGGIO - 2022</p>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="author-card">
+            <img src="./app/img/mh.jpg" alt="" class="author-img" />
+            <div class="author-name glow">
+              <a href="">MARCO CANNELLA</a>
+            </div>
+            <p class="author-role">DOPPIAGGIO - 2022</p>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="author-card">
+            <img src="./app/img/mh.jpg" alt="" class="author-img" />
+            <div class="author-name glow">
+              <a href="">MARCO CANNELLA</a>
+            </div>
+            <p class="author-role">DOPPIAGGIO - 2022</p>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="author-card">
+            <img src="./app/img/mh.jpg" alt="" class="author-img" />
+            <div class="author-name glow">
+              <a href="">MARCO CANNELLA</a>
+            </div>
+            <p class="author-role">DOPPIAGGIO - 2022</p>
+          </div>
         </div>
       </div>
     </section>
@@ -195,7 +232,11 @@
         </div>
         <div class="col-3">
           <ul>
-            <li><a href="">AREA RISERVATA</a></li>
+            <?php if(isset($_SESSION['admin'])) { 
+              echo "<li><a href='./app/php/logout.php'>LOGOUT</a></li>";
+            } else {
+              echo "<li><a href='./app/php/login.php'>AREA RISERVATA</a></li>";
+            } ?>
             <div class="socials">
               <ul>
                 <li>
