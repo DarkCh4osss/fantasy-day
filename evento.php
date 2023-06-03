@@ -1,7 +1,7 @@
 <?php 
 include('./app/php/connection.php'); 
 $id = $_GET['id'];
-$sql = $conn->query("select * from partecipanti where id=$id;");
+$sql = $conn->query("select * from eventi where id=$id;");
 $row = $sql->fetch_assoc();
 ?>
 <!DOCTYPE html>
@@ -10,7 +10,7 @@ $row = $sql->fetch_assoc();
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><?php echo $row['titolo'] ?> | Fantasy Day</title>
+    <title><?php echo $row['sottotitolo'] ?> | Fantasy Day</title>
     <link rel="stylesheet" href="./dist/styles.css" />
         <link
       rel="shortcut icon"
@@ -37,7 +37,7 @@ $row = $sql->fetch_assoc();
     <link rel="preload" href="./app/img/Rebis_color_resized.png" />
   </head>
   <body>
-    <section class="top__navbar chi-siamo">
+    <section class="top__navbar eventi">
       <div class="row">
         <div class="col-2"></div>
         <div class="col-2">
@@ -53,7 +53,7 @@ $row = $sql->fetch_assoc();
                 target="_blank"
                 ><i class="fa fa-tiktok"></i
               ></a>
-            </li>
+              <?php include('./app/php/connection.php'); ?>          </li>
             <li>
               <a
                 href="https://www.instagram.com/fantasyday_official/"
@@ -78,7 +78,7 @@ $row = $sql->fetch_assoc();
       </div>
     </section>
 
-    <section class="navbar__sect chi-siamo">
+    <section class="navbar__sect eventi">
       <div class="row">
         <div class="col-2">
           <img
@@ -106,116 +106,20 @@ $row = $sql->fetch_assoc();
         </div>
       </div>
     </section>
-
-    <div class="kpop-group">
-      <img src="./app/img/kpop_group.jpg" alt="" />
-    </div>
-    <section class="chi-siamo__sect">
-      <h1 class="chi-siamo_title glow">
-        CHI SIAMO - <span><?php echo $_GET['id']; ?></span>
-      </h1>
-      <p class="chi-siamo_paragraph">
-        Con noi, nel corso degli anni, tanti ospiti eccezionali. <br />
-        Ne citiamo alcuni: <br />
-        I fumettisti
-        <a href="" class="patecipante_paragraph">Bruno Brindisi</a>,
-        <a href="" class="partecipante_paragraph">Marco Castaldo</a>,
-        <a href="" class="partecipante_paragraph">Barbara Ciardo</a>; <br />
-        I doppiatori
-        <a href="" class="partecipante_paragraph">Davide Pierino</a>,
-        <a href="" class="partecipante_paragraph">Daniele Giuliani</a>,
-        <a href="" class="partecipante_paragraph">Manuel Meli</a>,
-        <a href="" class="partecipante_paragraph">Alex Polidori</a>,
-        <a href="" class="partecipante_paragraph">Marco Cannella</a>; <br />
-        Gli scrittori ed esperti di fumetto e di cultura audiovisiva
-        <a href="" class="partecipante_paragraph">Gianluca di Fratta</a>,
-        <a href="" class="partecipante_paragraph">Riccardo Rosati</a>,
-        <a href="" class="partecipante_paragraph">Davide Tarò</a>,
-        <a href="" class="partecipante_paragraph">Marino Maiorino</a>; <br />
-        Le scrittrici
-        <a href="" class="partecipante_paragraph">Monica Zunica</a>,
-        <a href="" class="partecipante_paragraph">Daniela Ferraro Pozzer</a>,
-        <a href="" class="partecipante_paragraph">Anna Fabrello</a>.
-      </p>
     </section>
 
-    <section class="partecipanti__sect">
-      <div class="row">
-        <div class="col-4">
-          <div class="author-card">
-            <img src="./app/img/mh.jpg" alt="" class="author-img" />
-            <div class="author-name glow">
-              <a href="">MARCO CANNELLA</a>
-            </div>
-            <p class="author-role">DOPPIAGGIO - 2022</p>
-          </div>
-        </div>
-        <div class="col-4">
-          <div class="author-card">
-            <img src="./app/img/mh.jpg" alt="" class="author-img" />
-            <div class="author-name glow">
-              <a href="">MARCO CANNELLA</a>
-            </div>
-            <p class="author-role">DOPPIAGGIO - 2022</p>
-          </div>
-        </div>
-        <div class="col-4">
-          <div class="author-card">
-            <img src="./app/img/mh.jpg" alt="" class="author-img" />
-            <div class="author-name glow">
-              <a href="">MARCO CANNELLA</a>
-            </div>
-            <p class="author-role">DOPPIAGGIO - 2022</p>
-          </div>
-        </div>
-        <div class="col-4">
-          <div class="author-card">
-            <img src="./app/img/mh.jpg" alt="" class="author-img" />
-            <div class="author-name glow">
-              <a href="">MARCO CANNELLA</a>
-            </div>
-            <p class="author-role">DOPPIAGGIO - 2022</p>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-4">
-          <div class="author-card">
-            <img src="./app/img/mh.jpg" alt="" class="author-img" />
-            <div class="author-name glow">
-              <a href="">MARCO CANNELLA</a>
-            </div>
-            <p class="author-role">DOPPIAGGIO - 2022</p>
-          </div>
-        </div>
-        <div class="col-4">
-          <div class="author-card">
-            <img src="./app/img/mh.jpg" alt="" class="author-img" />
-            <div class="author-name glow">
-              <a href="">MARCO CANNELLA</a>
-            </div>
-            <p class="author-role">DOPPIAGGIO - 2022</p>
-          </div>
-        </div>
-        <div class="col-4">
-          <div class="author-card">
-            <img src="./app/img/mh.jpg" alt="" class="author-img" />
-            <div class="author-name glow">
-              <a href="">MARCO CANNELLA</a>
-            </div>
-            <p class="author-role">DOPPIAGGIO - 2022</p>
-          </div>
-        </div>
-        <div class="col-4">
-          <div class="author-card">
-            <img src="./app/img/mh.jpg" alt="" class="author-img" />
-            <div class="author-name glow">
-              <a href="">MARCO CANNELLA</a>
-            </div>
-            <p class="author-role">DOPPIAGGIO - 2022</p>
-          </div>
-        </div>
-      </div>
+    <div class="kpop-group">
+      <img src="./app/img/eventi.jpg" alt="" />
+    </div>
+    <section class="eventi-main__sect">
+      <h1 class="eventi-main_title glow">Eventi - <span><?php echo $row['sottotitolo'] . " | " . $row['titolo'] ?></span></h1>
+      <p class="eventi-main_paragraph">
+      <?php
+        if($row['descrizione'] == "") {
+          echo "No info da mostrare.";
+      } else { echo $row['descrizione']; }
+      ?>
+      </p>
     </section>
 
     <img src="./app/img/skeleton.jpg" alt="" class="skeleton" />
@@ -233,8 +137,8 @@ $row = $sql->fetch_assoc();
         <div class="col-3">
           <ul>
             <li><a href="/">HOME</a></li>
-            <li><a href="#">CHI SIAMO</a></li>
-            <li><a href="eventi.php">EVENTI</a></li>
+            <li><a href="chi-siamo.php">CHI SIAMO</a></li>
+            <li><a href="#">EVENTI</a></li>
             <li><a href="">ARCHIVIO</a></li>
             <li><a href="">AREE</a></li>
           </ul>

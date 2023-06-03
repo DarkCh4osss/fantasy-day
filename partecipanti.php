@@ -7,7 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Partecipanti | Fantasy Day</title>
     <link rel="stylesheet" href="./dist/styles.css" />
-    <link rel="shortcut icon" href="./app/img/logo.png" type="image/png" />
+        <link
+      rel="shortcut icon"
+      href="./app/img/logo_resized.png"
+      type="image/png"
+    />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -83,10 +87,10 @@
           <ul>
             <li><a href="./">HOME</a></li>
             <li>
-              <a href="chi-siamo.html">CHI SIAMO</a>
+              <a href="chi-siamo.php">CHI SIAMO</a>
             </li>
             <li><a href="">AREE</a></li>
-            <li><a href="eventi.html">EVENTI</a></li>
+            <li><a href="eventi.php">EVENTI</a></li>
             <li><a href="">FILM FESTIVAL</a></li>
             <li><a href="#">PARTECIPANTI</a></li>
             <li><a href="">ARCHIVIO</a></li>
@@ -139,7 +143,7 @@
           echo "<div class='author-card'>";
           echo "<img src='../app/img/mh.jpg' alt='' class='author-img' />";
           echo "<div class='author-name glow'>";
-          echo "<a href=''>".$row['titolo']."</a>";
+          echo "<a href='partecipante.php?id=".$row['id']."'>".$row['titolo']."</a>";
           echo "</div>";
           echo "<p class='author-role'>".$row['anno']."</p>";
           echo "</div>";
@@ -155,7 +159,7 @@
           echo "<div class='author-card'>";
           echo "<img src='../app/img/mh.jpg' alt='' class='author-img' />";
           echo "<div class='author-name glow'>";
-          echo "<a href=''>".$row['titolo']."</a>";
+          echo "<a href='partecipante.php?id=".$row['id']."'>".$row['titolo']."</a>";
           echo "</div>";
           echo "<p class='author-role'>".$row['anno']."</p>";
           echo "</div>";
@@ -181,7 +185,7 @@
           <ul>
             <li><a href="/">HOME</a></li>
             <li><a href="#">CHI SIAMO</a></li>
-            <li><a href="eventi.html">EVENTI</a></li>
+            <li><a href="eventi.php">EVENTI</a></li>
             <li><a href="">ARCHIVIO</a></li>
             <li><a href="">AREE</a></li>
           </ul>

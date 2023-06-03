@@ -7,7 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Eventi | Fantasy Day</title>
     <link rel="stylesheet" href="./dist/styles.css" />
-    <link rel="shortcut icon" href="./app/img/logo.png" type="image/png" />
+        <link
+      rel="shortcut icon"
+      href="./app/img/logo_resized.png"
+      type="image/png"
+    />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -83,7 +87,7 @@
           <ul>
             <li><a href="./">HOME</a></li>
             <li>
-              <a href="chi-siamo.html">CHI SIAMO</a>
+              <a href="chi-siamo.php">CHI SIAMO</a>
             </li>
             <li><a href="">AREE</a></li>
             <li><a href="#">EVENTI</a></li>
@@ -110,105 +114,33 @@
     </section>
 
     <section class="eventi__sect">
-      <!-- <div class="row">
-        <div class="col-4">
-          <div class="event-card">
-            <img src="./app/img/mh.jpg" alt="" class="event-img" />
-            <div class="event-name glow">
-              <a href="">TRASMUTAZIONE</a>
-            </div>
-            <p class="event-date">edizione - 2023</p>
-          </div>
-        </div>
-        <div class="col-4">
-          <div class="event-card">
-            <img src="./app/img/mh.jpg" alt="" class="event-img" />
-            <div class="event-name glow">
-              <a href="">TRASMUTAZIONE</a>
-            </div>
-            <p class="event-date">edizione - 2023</p>
-          </div>
-        </div>
-        <div class="col-4">
-          <div class="event-card">
-            <img src="./app/img/mh.jpg" alt="" class="event-img" />
-            <div class="event-name glow">
-              <a href="">TRASMUTAZIONE</a>
-            </div>
-            <p class="event-date">edizione - 2023</p>
-          </div>
-        </div>
-        <div class="col-4">
-          <div class="event-card">
-            <img src="./app/img/mh.jpg" alt="" class="event-img" />
-            <div class="event-name glow">
-              <a href="">TRASMUTAZIONE</a>
-            </div>
-            <p class="event-date">edizione - 2023</p>
-          </div>
-        </div> -->
+      <div class="row">
         <?php 
-        $sql = $conn->query("select * from eventi order by anno desc limit 4;");
+        $sql = $conn->query("select * from eventi order by id desc limit 4;");
         while($row = $sql->fetch_assoc()) {
           echo "<div class='col-4'>";
           echo "<div class='event-card'>";
           echo "<img src='../app/img/mh.jpg' alt='' class='event-img' />";
           echo "<div class='event-name glow'>";
-          echo "<a href=''>".$row['titolo']."</a>";
+          echo "<a href='evento.php?id=".$row['id']."'>".$row['sottotitolo']."</a>";
           echo "</div>";
-          echo "<p class='event-role'>".$row['anno']."</p>";
+          echo "<p class='event-date'>".$row['titolo']."</p>";
           echo "</div>";
           echo "</div>";
         }
         ?>
       </div>
-      <!-- <div class="row">
-        <div class="col-4">
-          <div class="event-card">
-            <img src="./app/img/mh.jpg" alt="" class="event-img" />
-            <div class="event-name glow">
-              <a href="">TRASMUTAZIONE</a>
-            </div>
-            <p class="event-date">edizione - 2023</p>
-          </div>
-        </div>
-        <div class="col-4">
-          <div class="event-card">
-            <img src="./app/img/mh.jpg" alt="" class="event-img" />
-            <div class="event-name glow">
-              <a href="">TRASMUTAZIONE</a>
-            </div>
-            <p class="event-date">edizione - 2023</p>
-          </div>
-        </div>
-        <div class="col-4">
-          <div class="event-card">
-            <img src="./app/img/mh.jpg" alt="" class="event-img" />
-            <div class="event-name glow">
-              <a href="">TRASMUTAZIONE</a>
-            </div>
-            <p class="event-date">edizione - 2023</p>
-          </div>
-        </div>
-        <div class="col-4">
-          <div class="event-card">
-            <img src="./app/img/mh.jpg" alt="" class="event-img" />
-            <div class="event-name glow">
-              <a href="">TRASMUTAZIONE</a>
-            </div>
-            <p class="event-date">edizione - 2023</p>
-          </div>
-        </div> -->
+      <div class="row">
         <?php 
-        $sql = $conn->query("select * from eventi where id > 12 order by anno desc limit 4;");
+        $sql = $conn->query("select * from eventi where id <= 12 order by id desc limit 4;");
         while($row = $sql->fetch_assoc()) {
           echo "<div class='col-4'>";
           echo "<div class='event-card'>";
           echo "<img src='../app/img/mh.jpg' alt='' class='event-img' />";
           echo "<div class='event-name glow'>";
-          echo "<a href=''>".$row['titolo']."</a>";
+          echo "<a href='evento.php?id=".$row['id']."'>".$row['sottotitolo']."</a>";
           echo "</div>";
-          echo "<p class='event-role'>".$row['anno']."</p>";
+          echo "<p class='event-date'>".$row['titolo']."</p>";
           echo "</div>";
           echo "</div>";
         }
@@ -231,7 +163,7 @@
         <div class="col-3">
           <ul>
             <li><a href="/">HOME</a></li>
-            <li><a href="chi-siamo.html">CHI SIAMO</a></li>
+            <li><a href="chi-siamo.php">CHI SIAMO</a></li>
             <li><a href="#">EVENTI</a></li>
             <li><a href="">ARCHIVIO</a></li>
             <li><a href="">AREE</a></li>

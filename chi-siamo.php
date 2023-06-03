@@ -7,7 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Chi Siamo | Fantasy Day</title>
     <link rel="stylesheet" href="./dist/styles.css" />
-    <link rel="shortcut icon" href="./app/img/logo.png" type="image/png" />
+        <link
+      rel="shortcut icon"
+      href="./app/img/logo_resized.png"
+      type="image/png"
+    />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -86,7 +90,7 @@
               <a href="#">CHI SIAMO</a>
             </li>
             <li><a href="">AREE</a></li>
-            <li><a href="eventi.html">EVENTI</a></li>
+            <li><a href="eventi.php">EVENTI</a></li>
             <li><a href="">FILM FESTIVAL</a></li>
             <li><a href="partecipanti.php">PARTECIPANTI</a></li>
             <li><a href="">ARCHIVIO</a></li>
@@ -193,7 +197,7 @@
           <ul>
             <li><a href="/">HOME</a></li>
             <li><a href="#">CHI SIAMO</a></li>
-            <li><a href="eventi.html">EVENTI</a></li>
+            <li><a href="eventi.php">EVENTI</a></li>
             <li><a href="">ARCHIVIO</a></li>
             <li><a href="">AREE</a></li>
           </ul>

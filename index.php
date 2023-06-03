@@ -92,12 +92,12 @@
             <ul class="links">
               <li><a href="#">HOME</a></li>
               <li>
-                <a href="chi-siamo.html">CHI SIAMO</a>
+                <a href="chi-siamo.php">CHI SIAMO</a>
               </li>
               <li><a href="">AREE</a></li>
-              <li><a href="eventi.html">EVENTI</a></li>
+              <li><a href="eventi.php">EVENTI</a></li>
               <li><a href="">FILM FESTIVAL</a></li>
-              <li><a href="">PARTECIPANTI</a></li>
+              <li><a href="partecipanti.php">PARTECIPANTI</a></li>
               <li><a href="">ARCHIVIO</a></li>
               <li>
                 <a href=""><i class="fa fa-search"></i></a>
@@ -237,8 +237,8 @@
         <div class="col-3">
           <ul>
             <li><a href="#">HOME</a></li>
-            <li><a href="chi-siamo.html">CHI SIAMO</a></li>
-            <li><a href="eventi.html">EVENTI</a></li>
+            <li><a href="chi-siamo.php">CHI SIAMO</a></li>
+            <li><a href="eventi.php">EVENTI</a></li>
             <li><a href="">ARCHIVIO</a></li>
             <li><a href="">AREE</a></li>
           </ul>
